@@ -1,7 +1,20 @@
+
 services:
-  web:
-    image: rafliakramf/uas:latest
-    container_name: web-uas
+  cv-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        FULL_NAME_PLACEHOLDER: "Rafli Akram"
+        ROLE_PLACEHOLDER: "Sistem Informasi"
+        UNIVERSITY_PLACEHOLDER: "STMIK TAZKIA"
+        SEMESTER_PLACEHOLDER: "2"
+        EMAIL_PLACEHOLDER: "Rafliakram712@gmail.com"
+        LOCATION_PLACEHOLDER: "Bogor, Indonesia"
+        BIO_PLACEHOLDER: "Saya adalah mahasiswa Sistem Informasi di STMIK TAZKIA semester 2 yang memiliki ketertarikan kuat dalam mempelajari teknologi cloud, administrasi jaringan, serta containerization menggunakan Docker."
+        SKILLS_PLACEHOLDER: "Docker, Linux, Git, HTML, CSS, SQL, Analytical Thinking"
+    image: cv-rafli-tazkia:latest
+    container_name: cv_container_rafli
     ports:
-      - "8096:80"
-    restart: unless-stopped
+      - "8097:80"
+
