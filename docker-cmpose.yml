@@ -1,0 +1,7 @@
+services:
+  web:
+    image: rafliakramf/uas:latest
+    container_name: web-uas
+    ports:
+      - "8096:80"
+    restart: unless-stopped
